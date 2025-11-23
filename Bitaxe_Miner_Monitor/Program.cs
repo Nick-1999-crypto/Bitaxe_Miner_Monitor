@@ -16,7 +16,7 @@ namespace Bitaxe_Miner_Monitor
         {
             Timeout = TimeSpan.FromSeconds(10) // 10 second timeout
         };
-        private static string bitaxeIp = "192.168.0.195";
+        private static string bitaxeIp = "192.168.0.195"; // REPLACE IP HERE
         private static int refreshInterval = 5; // seconds
         private static HttpListener listener;
         private static int webPort = 8080;
