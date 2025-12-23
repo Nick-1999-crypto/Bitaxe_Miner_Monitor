@@ -42,7 +42,7 @@
             font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
             background: var(--bg-primary);
             color: var(--text-primary);
-            padding: 16px;
+            padding: 12px;
             min-height: 100vh;
             -webkit-font-smoothing: antialiased;
             -moz-osx-font-smoothing: grayscale;
@@ -53,13 +53,13 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            margin-bottom: 20px;
-            padding-bottom: 12px;
+            margin-bottom: 12px;
+            padding-bottom: 8px;
             border-bottom: 1px solid var(--border-color);
         }
         
         .dashboard-title {
-            font-size: 21px;
+            font-size: 22px;
             font-weight: 700;
             color: var(--text-primary);
             letter-spacing: -0.5px;
@@ -68,18 +68,18 @@
         .header-controls {
             display: flex;
             align-items: center;
-            gap: 12px;
+            gap: 10.8px;
         }
         
         .theme-toggle {
             display: flex;
             align-items: center;
-            gap: 8px;
-            padding: 6px 12px;
+            gap: 7.2px;
+            padding: 5.4px 10.8px;
             background: var(--bg-secondary);
             border: 1px solid var(--border-color);
-            border-radius: 6px;
-            font-size: 13px;
+            border-radius: 5.4px;
+            font-size: 11.7px;
             font-weight: 600;
             color: var(--text-primary);
             cursor: pointer;
@@ -101,12 +101,12 @@
         .status-indicator {
             display: flex;
             align-items: center;
-            gap: 8px;
-            padding: 6px 14px;
+            gap: 7.2px;
+            padding: 5.4px 12.6px;
             background: var(--bg-secondary);
-            border-radius: 6px;
+            border-radius: 5.4px;
             border: 1px solid var(--border-color);
-            font-size: 13px;
+            font-size: 11.7px;
             font-weight: 600;
             box-shadow: var(--shadow-sm);
         }
@@ -128,22 +128,22 @@
         }
         
         .tabs-container {
-            margin-bottom: 22px;
+            margin-bottom: 12px;
         }
         
         .tabs-nav {
             display: flex;
-            gap: 4px;
+            gap: 3.6px;
             border-bottom: 1px solid var(--border-color);
-            margin-bottom: 16px;
+            margin-bottom: 10px;
         }
         
         .tab-button {
-            padding: 8px 16px;
+            padding: 7.2px 14.4px;
             background: transparent;
             border: none;
             border-bottom: 2px solid transparent;
-            font-size: 12px;
+            font-size: 10.8px;
             font-weight: 600;
             color: var(--text-secondary);
             cursor: pointer;
@@ -175,15 +175,15 @@
         
         .key-metrics {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(162px, 1fr));
             gap: 10px;
-            margin-bottom: 18px;
+            margin-bottom: 14px;
         }
         
         .metric-card {
             background: var(--bg-secondary);
-            border-radius: 10px;
-            padding: 8px 12px;
+            border-radius: 9px;
+            padding: 9px 13px;
             height: 90px;
             box-shadow: var(--shadow-sm);
             border: 1px solid var(--border-color);
@@ -328,36 +328,45 @@
         
         .metric-card.vr-temperature.success,
         .metric-card.vr-temperature.warning,
-        .metric-card.vr-temperature.danger {
+        .metric-card.vr-temperature.danger,
+        .metric-card.operating-temperature.success,
+        .metric-card.operating-temperature.warning,
+        .metric-card.operating-temperature.danger {
             background-image: url('/images/cards/vr-temperature/background.jpg');
         }
         
-        .metric-card.vr-temperature.success::after {
+        .metric-card.vr-temperature.success::after,
+        .metric-card.operating-temperature.success::after {
             background: rgba(16, 185, 129, 0.2);
         }
         
-        .metric-card.vr-temperature.success {
+        .metric-card.vr-temperature.success,
+        .metric-card.operating-temperature.success {
             border: 2px solid rgba(16, 185, 129, 0.5);
             box-shadow: 0 0 8px rgba(16, 185, 129, 0.3);
         }
         
-        .metric-card.vr-temperature.warning {
+        .metric-card.vr-temperature.warning,
+        .metric-card.operating-temperature.warning {
             border: 2px solid rgba(245, 158, 11, 0.8);
             box-shadow: 0 0 12px rgba(245, 158, 11, 0.5);
             animation: pulse-warning 2s ease-in-out infinite;
         }
         
-        .metric-card.vr-temperature.warning::after {
+        .metric-card.vr-temperature.warning::after,
+        .metric-card.operating-temperature.warning::after {
             background: rgba(245, 158, 11, 0.25);
         }
         
-        .metric-card.vr-temperature.danger {
+        .metric-card.vr-temperature.danger,
+        .metric-card.operating-temperature.danger {
             border: 2px solid rgba(239, 68, 68, 0.9);
             box-shadow: 0 0 16px rgba(239, 68, 68, 0.6);
             animation: pulse-danger 1.5s ease-in-out infinite;
         }
         
-        .metric-card.vr-temperature.danger::after {
+        .metric-card.vr-temperature.danger::after,
+        .metric-card.operating-temperature.danger::after {
             background: rgba(239, 68, 68, 0.3);
         }
         
@@ -479,7 +488,7 @@
             font-size: 10px;
             font-weight: 600;
             opacity: 0.85;
-            margin-bottom: 5px;
+            margin-bottom: 4px;
             text-transform: uppercase;
             letter-spacing: 0.8px;
             font-family: 'Inter', sans-serif;
@@ -489,7 +498,7 @@
         .metric-value-wrapper {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 10px;
+            gap: 9px;
             align-items: flex-end;
             margin-top: 0;
         }
@@ -509,7 +518,7 @@
             font-size: 10px;
             font-weight: 600;
             opacity: 0.85;
-            margin-bottom: 5px;
+            margin-bottom: 4px;
             text-transform: uppercase;
             letter-spacing: 0.8px;
             font-family: 'Inter', sans-serif;
@@ -517,7 +526,7 @@
         }
         
         .metric-value {
-            font-size: 23px;
+            font-size: 24px;
             font-weight: 700;
             line-height: 1.1;
             margin-bottom: 0;
@@ -537,7 +546,7 @@
         }
         
         .metric-average {
-            font-size: 23px;
+            font-size: 24px;
             font-weight: 700;
             color: inherit;
             white-space: nowrap;
@@ -550,15 +559,15 @@
         }
         
         .metric-subvalue {
-            font-size: 12px;
+            font-size: 10.8px;
             opacity: 0.75;
             font-weight: 500;
             color: inherit;
-            margin-top: 4px;
+            margin-top: 3.6px;
         }
         
         .metric-card .metric-label {
-            margin-bottom: 5px;
+            margin-bottom: 4.5px;
         }
         
         .metric-card:not(.blocks-found) .metric-value-wrapper {
@@ -567,9 +576,9 @@
         
         .charts-section {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
-            gap: 16px;
-            margin-bottom: 18px;
+            grid-template-columns: repeat(auto-fit, minmax(342px, 1fr));
+            gap: 14px;
+            margin-bottom: 14px;
         }
         
         .chart-container {
@@ -578,8 +587,8 @@
             background-size: 100% 100%;
             background-position: center center;
             background-repeat: no-repeat;
-            border-radius: 10px;
-            padding: 16px;
+            border-radius: 9px;
+            padding: 14px;
             box-shadow: var(--shadow-sm);
             border: 1px solid var(--border-color);
             transition: all 0.2s;
@@ -618,21 +627,21 @@
         .chart-title {
             font-size: 13px;
             font-weight: 600;
-            margin-bottom: 12px;
+            margin-bottom: 10px;
             color: var(--text-primary);
             letter-spacing: -0.2px;
         }
         
         .chart-wrapper {
             position: relative;
-            height: 260px;
+            height: 250px;
         }
         
         .metrics-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-            gap: 14px;
-            margin-bottom: 18px;
+            grid-template-columns: repeat(auto-fit, minmax(198px, 1fr));
+            gap: 12px;
+            margin-bottom: 14px;
         }
         
         .info-card {
@@ -641,8 +650,8 @@
             background-size: 100% 100%;
             background-position: center center;
             background-repeat: no-repeat;
-            border-radius: 8px;
-            padding: 12px 14px;
+            border-radius: 7.2px;
+            padding: 11px 13px;
             box-shadow: var(--shadow-sm);
             border: 1px solid var(--border-color);
             transition: all 0.2s;
@@ -683,7 +692,7 @@
         }
         
         .info-value {
-            font-size: 15px;
+            font-size: 14.5px;
             font-weight: 600;
             color: var(--text-primary);
             letter-spacing: -0.3px;
@@ -716,11 +725,11 @@
         
         .footer {
             text-align: center;
-            padding: 12px 16px;
+            padding: 8px 12px;
             color: var(--text-secondary);
-            font-size: 11px;
+            font-size: 10px;
             border-top: 1px solid var(--border-color);
-            margin-top: 18px;
+            margin-top: 12px;
             font-weight: 500;
         }
         
@@ -739,7 +748,7 @@
         .section-title {
             font-size: 16px;
             font-weight: 700;
-            margin-bottom: 12px;
+            margin-bottom: 10px;
             color: var(--text-primary);
             letter-spacing: -0.3px;
         }
@@ -824,7 +833,7 @@
 </head>
 <body>
     <div class="dashboard-header">
-        <h1 class="dashboard-title">BitAxe Mining Dashboard</h1>
+        <h1 class="dashboard-title">Mining Dashboard</h1>
         <div class="header-controls">
             <button class="theme-toggle" id="theme-toggle" title="Toggle theme">
                 <svg id="theme-icon-light" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" style="display: none;">
@@ -844,32 +853,33 @@
     
     <div class="tabs-container">
         <div class="tabs-nav">
-            <button class="tab-button active" onclick="switchTab('charts')">Charts</button>
-            <button class="tab-button" onclick="switchTab('device')">Device Info</button>
-            <button class="tab-button" onclick="switchTab('network')">Network Info</button>
-            <button class="tab-button" onclick="switchTab('all')">All Data</button>
-        </div>
-        
-        <!-- Charts Tab -->
-        <div id="tab-charts" class="tab-content active">
-            <div id="charts-container" class="charts-section"></div>
-        </div>
-        
-        <!-- Device Info Tab -->
-        <div id="tab-device" class="tab-content">
-            <div id="device-container"></div>
-        </div>
-        
-        <!-- Network Info Tab -->
-        <div id="tab-network" class="tab-content">
-            <div id="network-container"></div>
+            <button class="tab-button active" onclick="switchTab('all')">BitAxe</button>
+            <button class="tab-button" onclick="switchTab('avalon')">Nano3s</button>
+            <button class="tab-button" onclick="switchTab('swarm')">Swarm</button>
         </div>
         
         <!-- All Data Tab -->
-        <div id="tab-all" class="tab-content">
+        <div id="tab-all" class="tab-content active">
             <div id="key-metrics-container" class="key-metrics"></div>
             <div id="charts-container-all" class="charts-section"></div>
             <div id="metrics-container" class="metrics-grid"></div>
+        </div>
+        
+        <!-- Avalon Nano 3S Tab -->
+        <div id="tab-avalon" class="tab-content">
+            <div id="avalon-metrics-container" class="key-metrics"></div>
+            <div id="avalon-charts-container" class="charts-section"></div>
+            <div id="avalon-info-container" class="metrics-grid"></div>
+        </div>
+        
+        <!-- Swarm Tab -->
+        <div id="tab-swarm" class="tab-content">
+            <h2 class="section-title" style="margin-bottom: 10px;">BitAxe</h2>
+            <div id="swarm-bitaxe-metrics-container" class="key-metrics"></div>
+            <div id="swarm-bitaxe-charts-container" class="charts-section"></div>
+            <h2 class="section-title" style="margin-top: 20px; margin-bottom: 10px;">Avalon Nano 3S</h2>
+            <div id="swarm-avalon-metrics-container" class="key-metrics"></div>
+            <div id="swarm-avalon-charts-container" class="charts-section"></div>
         </div>
         </div>
     
@@ -1001,6 +1011,13 @@
             vrTemperature: { labels: [], values: [] }
         };
         
+        // Avalon Nano chart data
+        const avalonChartData = {
+            hashrate: { labels: [], values: [], avgValues: [] },
+            avgTemp: { labels: [], values: [] },
+            operatingTemp: { labels: [], values: [] }
+        };
+        
         // Chart instances
         let hashrateChart = null;
         let temperatureChart = null;
@@ -1008,6 +1025,27 @@
         let hashrateChartAll = null;
         let temperatureChartAll = null;
         let vrTemperatureChartAll = null;
+        
+        // Avalon Nano chart instances
+        let avalonHashrateChart = null;
+        let avalonAvgTempChart = null;
+        let avalonOperatingTempChart = null;
+        
+        // Swarm tab chart instances (BitAxe)
+        let swarmBitaxeHashrateChart = null;
+        let swarmBitaxeTemperatureChart = null;
+        let swarmBitaxeVrTemperatureChart = null;
+        
+        // Swarm tab chart instances (Avalon Nano)
+        let swarmAvalonHashrateChart = null;
+        let swarmAvalonAvgTempChart = null;
+        let swarmAvalonOperatingTempChart = null;
+        
+        // Track Avalon Nano fetch timeout to prevent multiple simultaneous fetches
+        let avalonFetchTimeoutId = null;
+        
+        // Store last known Avalon data for swarm display
+        let lastKnownAvalonData = null;
         
         // Store last known data to preserve display when connection is lost
         let lastKnownData = null;
@@ -1039,6 +1077,9 @@
             if (hashrateChartAll) updateChart(hashrateChartAll, [], [], '#3b82f6');
             if (temperatureChartAll) updateChart(temperatureChartAll, [], [], '#ef4444');
             if (vrTemperatureChartAll) updateChart(vrTemperatureChartAll, [], [], '#f59e0b');
+            if (swarmBitaxeHashrateChart) updateChart(swarmBitaxeHashrateChart, [], [], '#3b82f6');
+            if (swarmBitaxeTemperatureChart) updateChart(swarmBitaxeTemperatureChart, [], [], '#ef4444');
+            if (swarmBitaxeVrTemperatureChart) updateChart(swarmBitaxeVrTemperatureChart, [], [], '#f59e0b');
         }
         
         // Initialize theme now that chart variables are declared
@@ -1052,28 +1093,32 @@
             });
             
             // Remove active class from all buttons
-            document.querySelectorAll('.tab-button').forEach(button => {
+            const allButtons = document.querySelectorAll('.tab-button');
+            allButtons.forEach(button => {
                 button.classList.remove('active');
             });
             
             // Show selected tab content
-            document.getElementById('tab-' + tabName).classList.add('active');
+            const selectedTab = document.getElementById('tab-' + tabName);
+            if (selectedTab) {
+                selectedTab.classList.add('active');
+            }
             
-            // Add active class to clicked button
-            event.target.classList.add('active');
-            
-            // Reinitialize charts if needed when switching to charts tab
-            if (tabName === 'charts' && (!hashrateChart || !temperatureChart || !vrTemperatureChart)) {
-                setTimeout(() => {
-                    initializeCharts('charts');
-                }, 100);
+            // Add active class to clicked button (try event.target first, fallback to finding by onclick)
+            if (typeof event !== 'undefined' && event.target) {
+                event.target.classList.add('active');
+            } else {
+                const selectedButton = Array.from(allButtons).find(btn => btn.getAttribute('onclick') === `switchTab('${tabName}')`);
+                if (selectedButton) {
+                    selectedButton.classList.add('active');
+                }
             }
             
             // Reinitialize charts if needed when switching to all tab
             if (tabName === 'all' && (!hashrateChartAll || !temperatureChartAll || !vrTemperatureChartAll)) {
                 setTimeout(() => {
                     initializeCharts('all');
-                    if (hashrateChart && chartData.hashrate.values.length > 0) {
+                    if (chartData.hashrate.values.length > 0) {
                         updateCharts('all');
                     }
                 }, 100);
@@ -1084,6 +1129,37 @@
                 setTimeout(() => {
                     updateDisplay(lastKnownData);
                 }, 150);
+            }
+            
+            // Initialize Avalon Nano charts if switching to avalon tab
+            if (tabName === 'avalon') {
+                // Clear any existing fetch timeout when switching tabs
+                if (avalonFetchTimeoutId) {
+                    clearTimeout(avalonFetchTimeoutId);
+                    avalonFetchTimeoutId = null;
+                }
+                setTimeout(() => {
+                    initializeAvalonCharts();
+                    fetchAvalonStats();
+                }, 100);
+            }
+            
+            // Initialize Swarm tab charts if switching to swarm tab
+            if (tabName === 'swarm') {
+                setTimeout(() => {
+                    initializeSwarmCharts();
+                    // Update swarm display with last known data if available
+                    if (hasReceivedData && lastKnownData) {
+                        updateSwarmBitaxeDisplay(lastKnownData);
+                    }
+                    if (lastKnownAvalonData) {
+                        updateSwarmAvalonDisplay(lastKnownAvalonData);
+                    }
+                    // Fetch fresh Avalon data if needed
+                    if (!lastKnownAvalonData) {
+                        fetchAvalonStats();
+                    }
+                }, 100);
             }
         }
         
@@ -1146,21 +1222,51 @@
             if (!chart) return;
             
             chart.data.labels = labels;
-            chart.data.datasets[0].data = values;
+            
+            // Find datasets by label instead of index (in case Chart.js reorders them)
+            const mainDataset = chart.data.datasets.find(d => d.label !== 'Average');
+            const averageDataset = chart.data.datasets.find(d => d.label === 'Average');
+            
+            if (mainDataset) {
+                mainDataset.data = values;
+            } else {
+                // Fallback to index if label search fails
+                chart.data.datasets[0].data = values;
+            }
             
             // Calculate running average for each point using helper function
             // Each point shows the average of all values from the start up to that point
             const averageValues = calculateRunningAverage(values);
             
-            chart.data.datasets[1].data = averageValues;
+            if (averageDataset) {
+                averageDataset.data = averageValues;
+            } else {
+                // Fallback to index if label search fails
+                chart.data.datasets[1].data = averageValues;
+            }
+            
+            // Ensure average dataset is last in array before update
+            const datasets = chart.data.datasets;
+            if (datasets.length === 2 && averageDataset && mainDataset) {
+                const avgIndex = datasets.indexOf(averageDataset);
+                const mainIndex = datasets.indexOf(mainDataset);
+                if (avgIndex < mainIndex) {
+                    // Swap to put average last
+                    datasets.splice(avgIndex, 1);
+                    datasets.push(averageDataset);
+                }
+            }
             
             chart.update('none');
         }
         
-        function createChart(canvasId, title, color) {
+        function createChart(canvasId, title, color, isHashrateChart = false, isTemperatureChart = false) {
             const ctx = document.getElementById(canvasId).getContext('2d');
-            const isHashrateChart = title.toLowerCase().includes('hashrate');
-            const isTemperatureChart = title.toLowerCase().includes('temperature');
+            // Auto-detect if not explicitly provided
+            if (!isHashrateChart && !isTemperatureChart) {
+                isHashrateChart = title.toLowerCase().includes('hashrate');
+                isTemperatureChart = title.toLowerCase().includes('temperature');
+            }
             
             // Get theme colors as actual color values
             const textPrimary = getThemeColor('--text-primary');
@@ -1174,8 +1280,8 @@
             if (isHashrateChart) {
                 // Hashrate main is blue (#3b82f6), use yellow/gold for average
                 averageColor = '#fbbf24';
-            } else if (title.toLowerCase().includes('vr temperature')) {
-                // VR Temperature main is orange (#f59e0b), use purple for average
+            } else if (title.toLowerCase().includes('vr temperature') || title.toLowerCase().includes('operating temperature')) {
+                // VR Temperature and Operating Temperature main is orange (#f59e0b), use purple for average
                 averageColor = '#a855f7';
             } else if (isTemperatureChart) {
                 // Temperature main is red (#ef4444), use cyan for average
@@ -1185,33 +1291,120 @@
                 averageColor = hexToRgba(color, 0.7);
             }
             
+            // Force yellow average line to render on top
+            // Chart.js draws datasets in array order - items later in array render on top
+            // We'll put average LAST in the array and NOT use order property to avoid conflicts
+            const datasets = [{
+                label: title,
+                data: [],
+                borderColor: color,
+                backgroundColor: color + '20',
+                borderWidth: 2,
+                fill: true,
+                tension: 0.4,
+                pointRadius: 2,
+                pointHoverRadius: 4,
+                pointBackgroundColor: color,
+                pointBorderColor: color
+                // NO order property - rely on array position
+            }, {
+                label: 'Average',
+                data: [],
+                borderColor: 'transparent',  // Make transparent so Chart.js doesn't draw it
+                backgroundColor: 'transparent',
+                borderWidth: 3,
+                borderDash: [5, 5],
+                fill: false,
+                tension: 0.4,
+                pointRadius: 0,  // Hide points - plugin will draw them
+                pointHoverRadius: 5,
+                pointBackgroundColor: 'transparent',
+                pointBorderColor: 'transparent',
+                pointBorderWidth: 2,
+                _originalColor: averageColor  // Store original color for plugin to use
+            }];
+            
+            // Verify average is last (it should be, but being explicit)
+            console.log('Datasets order:', datasets.map(d => d.label));
+            
+            // Custom plugin to force average line to render on top of everything
+            // Chart.js renders fills, lines, and points in separate passes, so we need
+            // to manually redraw the average line after everything else
+            const forceAverageOnTopPlugin = {
+                id: 'forceAverageOnTop',
+                afterDraw: (chart) => {
+                    const ctx = chart.ctx;
+                    const averageDataset = chart.data.datasets.find(d => d.label === 'Average');
+                    if (!averageDataset || !averageDataset.data || averageDataset.data.length === 0) {
+                        return;
+                    }
+                    
+                    const meta = chart.getDatasetMeta(chart.data.datasets.indexOf(averageDataset));
+                    if (!meta || !meta.data || meta.data.length === 0) {
+                        return;
+                    }
+                    
+                    ctx.save();
+                    
+                    // Use the stored average color (stored in dataset's _originalColor property or use default)
+                    const lineColor = averageDataset._originalColor || averageColor;
+                    const pointColor = lineColor;
+                    const pointBorderColor = lineColor;
+                    
+                    // Draw the average line on top
+                    ctx.strokeStyle = lineColor;
+                    ctx.lineWidth = 3;
+                    ctx.setLineDash([5, 5]);
+                    ctx.lineCap = 'round';
+                    ctx.lineJoin = 'round';
+                    
+                    ctx.beginPath();
+                    let firstPoint = true;
+                    for (let i = 0; i < meta.data.length; i++) {
+                        const point = meta.data[i];
+                        if (point && !point.skip) {
+                            if (firstPoint) {
+                                ctx.moveTo(point.x, point.y);
+                                firstPoint = false;
+                            } else {
+                                ctx.lineTo(point.x, point.y);
+                            }
+                        }
+                    }
+                    ctx.stroke();
+                    
+                    // Draw the average points on top
+                    const pointRadius = 3;
+                    const pointBorderWidth = 2;
+                    
+                    for (let i = 0; i < meta.data.length; i++) {
+                        const point = meta.data[i];
+                        if (point && !point.skip) {
+                            // Draw point border
+                            ctx.fillStyle = pointBorderColor;
+                            ctx.beginPath();
+                            ctx.arc(point.x, point.y, pointRadius + (pointBorderWidth / 2), 0, Math.PI * 2);
+                            ctx.fill();
+                            
+                            // Draw point fill
+                            ctx.fillStyle = pointColor;
+                            ctx.beginPath();
+                            ctx.arc(point.x, point.y, pointRadius, 0, Math.PI * 2);
+                            ctx.fill();
+                        }
+                    }
+                    
+                    ctx.restore();
+                }
+            };
+            
             return new Chart(ctx, {
                 type: 'line',
                 data: {
                     labels: [],
-                    datasets: [{
-                        label: title,
-                        data: [],
-                        borderColor: color,
-                        backgroundColor: color + '20',
-                        borderWidth: 2,
-                        fill: true,
-                        tension: 0.4,
-                        pointRadius: 2,
-                        pointHoverRadius: 4
-                    }, {
-                        label: 'Average',
-                        data: [],
-                        borderColor: averageColor,
-                        backgroundColor: 'transparent',
-                        borderWidth: 2,
-                        borderDash: [5, 5],
-                        fill: false,
-                        tension: 0.4,
-                        pointRadius: 2,
-                        pointHoverRadius: 4
-                    }]
+                    datasets: datasets
                 },
+                plugins: [forceAverageOnTopPlugin],
                 options: {
                     responsive: true,
                     maintainAspectRatio: false,
@@ -1225,7 +1418,22 @@
                                 font: {
                                     size: 12
                                 },
-                                color: textPrimary
+                                color: textPrimary,
+                                generateLabels: function(chart) {
+                                    const original = Chart.defaults.plugins.legend.labels.generateLabels;
+                                    const labels = original.call(this, chart);
+                                    // Fix color for Average dataset to use original color
+                                    labels.forEach(label => {
+                                        if (label.text === 'Average') {
+                                            const dataset = chart.data.datasets.find(d => d.label === 'Average');
+                                            if (dataset && dataset._originalColor) {
+                                                label.fillStyle = dataset._originalColor;
+                                                label.strokeStyle = dataset._originalColor;
+                                            }
+                                        }
+                                    });
+                                    return labels;
+                                }
                             }
                         },
                         tooltip: {
@@ -1241,7 +1449,8 @@
                                     const label = context.dataset.label || '';
                                     const value = context.parsed.y;
                                     if (isHashrateChart) {
-                                        return label + ': ' + (value / 1000).toFixed(2) + ' TH/s';
+                                        // Hashrate is already in TH/s, don't divide by 1000
+                                        return label + ': ' + parseFloat(value).toFixed(2) + ' TH/s';
                                     }
                                     if (isTemperatureChart) {
                                         return label + ': ' + parseFloat(value).toFixed(1) + ' °C';
@@ -1277,8 +1486,8 @@
                                 maxTicksLimit: 8,
                                 callback: function(value) {
                                     if (isHashrateChart) {
-                                        // Format with 2 decimal places for better precision
-                                        return (value / 1000).toFixed(2) + 'TH/s';
+                                        // Hashrate is already in TH/s, don't divide by 1000
+                                        return parseFloat(value).toFixed(2) + 'TH/s';
                                     }
                                     if (isTemperatureChart) {
                                         // Format temperature to 1 decimal place to avoid floating point precision errors
@@ -1421,7 +1630,7 @@
                 
                 // Check which tab is active
                 const activeTab = document.querySelector('.tab-button.active');
-                const isAllDataTab = activeTab && activeTab.textContent.trim() === 'All Data';
+                const isAllDataTab = activeTab && activeTab.textContent.trim() === 'BitAxe All Data';
                 
                 // If we have last known data, use it to keep the display intact
                 if (hasReceivedData && lastKnownData) {
@@ -1494,22 +1703,29 @@
             const now = new Date();
             const timeLabel = now.toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit', second: '2-digit' });
             
-            addToChartData('hashrate', timeLabel, hashRate);
+            // Convert hashrate to TH/s for chart (hashRate might be in GH/s from API)
+            const hashRateInTh = hashRate >= 1000 ? hashRate / 1000 : hashRate;
+            addToChartData('hashrate', timeLabel, hashRateInTh);
             addToChartData('temperature', timeLabel, temp);
             addToChartData('vrTemperature', timeLabel, vrTemp);
             
             // Calculate true average hashrate from historical data (after adding current value)
             let trueAvgHashrate = 0;
+            let trueAvgHashrateInTh = 0;
             if (chartData.hashrate.values.length > 0) {
                 const sum = chartData.hashrate.values.reduce((a, b) => a + b, 0);
-                trueAvgHashrate = sum / chartData.hashrate.values.length;
+                trueAvgHashrateInTh = sum / chartData.hashrate.values.length;
+                // Chart data is in TH/s, convert to GH/s for formatHashrate function
+                trueAvgHashrate = trueAvgHashrateInTh * 1000;
             } else {
                 // If no historical data yet, use current hashrate as initial value
+                // hashRate might be in GH/s from API, so use it directly
                 trueAvgHashrate = hashRate;
             }
             
             // Fallback to API's hashRateAvg if we don't have enough data points yet
             if (chartData.hashrate.values.length < 1 && hashRateAvg > 0) {
+                // hashRateAvg might be in GH/s from API, so use it directly
                 trueAvgHashrate = hashRateAvg;
             }
             
@@ -1529,13 +1745,12 @@
                 avgVrTemp = runningAvg[runningAvg.length - 1];
             }
             
-            // Initialize charts if not already created
-            if (!hashrateChart || !temperatureChart || !vrTemperatureChart) {
-                initializeCharts('charts');
+            // Initialize charts if not already created (for 'all' tab)
+            if (!hashrateChartAll || !temperatureChartAll || !vrTemperatureChartAll) {
+                initializeCharts('all');
             }
             
-            // Update charts
-            updateCharts('charts');
+            // Update charts (only 'all' tab exists now)
             updateCharts('all');
             
             // Update key metrics (for All Data tab)
@@ -1558,7 +1773,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="metric-card ${temp > 65 ? 'danger' : temp >= 60 ? 'warning' : 'success'}">
+                <div class="metric-card ${temp >= 75 ? 'danger' : temp >= 70 ? 'warning' : 'success'}">
                     <div class="metric-value-wrapper">
                         <div class="metric-value-section">
                             <div class="metric-label">Temperature</div>
@@ -1576,7 +1791,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="metric-card vr-temperature ${vrTemp > 80 ? 'danger' : vrTemp >= 70 ? 'warning' : 'success'}">
+                <div class="metric-card vr-temperature ${vrTemp >= 95 ? 'danger' : vrTemp >= 90 ? 'warning' : 'success'}">
                     <div class="metric-value-wrapper">
                         <div class="metric-value-section">
                             <div class="metric-label">VR Temperature</div>
@@ -1645,11 +1860,11 @@
                     </div>
                     <div class="info-card">
                         <div class="info-label">Temperature</div>
-                        <div class="info-value ${temp > 65 ? 'bad' : temp >= 60 ? 'warning' : 'good'}">${temp.toFixed(1)} °C</div>
+                        <div class="info-value ${temp >= 75 ? 'bad' : temp >= 70 ? 'warning' : 'good'}">${temp.toFixed(1)} °C</div>
                     </div>
                     <div class="info-card">
                         <div class="info-label">VR Temperature</div>
-                        <div class="info-value ${vrTemp > 80 ? 'bad' : vrTemp >= 70 ? 'warning' : 'good'}">${vrTemp.toFixed(1)} °C</div>
+                        <div class="info-value ${vrTemp >= 95 ? 'bad' : vrTemp >= 90 ? 'warning' : 'good'}">${vrTemp.toFixed(1)} °C</div>
                     </div>
                     <div class="info-card">
                         <div class="info-label">Power</div>
@@ -1701,7 +1916,8 @@
                     </div>
                 </div>
             `;
-            document.getElementById('device-container').innerHTML = deviceHtml;
+            // Note: device-container and network-container removed with their tabs
+            // Skip updating them to avoid JavaScript errors
             
             // Update Network Info tab
             const networkHtml = `
@@ -1757,7 +1973,8 @@
                     </div>
                 </div>
             `;
-            document.getElementById('network-container').innerHTML = networkHtml;
+            // Note: network-container removed with its tab
+            // Skip updating it to avoid JavaScript errors
             
             // Update All Data tab - detailed metrics
             const metricsHtml = `
@@ -1859,6 +2076,9 @@
                 </div>
             `;
             document.getElementById('metrics-container').innerHTML = metricsHtml;
+            
+            // Update swarm display if swarm tab exists
+            updateSwarmBitaxeDisplay(data);
         }
         
         // Polling function that continues even when tab is in background
@@ -1948,8 +2168,8 @@
             }
         }, refreshInterval * 2); // Check every 2 refresh intervals
         
-        // Initialize charts on load
-        initializeCharts('charts');
+        // Initialize charts on load (for 'all' tab)
+        initializeCharts('all');
         
         // Start polling immediately
         fetchStats().then(() => {
@@ -1960,6 +2180,598 @@
             lastFetchTime = Date.now();
             startPolling();
         });
+        
+        // Avalon Nano functions
+        function initializeAvalonCharts() {
+            const chartsHtml = `
+                <div class="chart-container">
+                    <h3 class="chart-title">Hashrate (TH/s)</h3>
+                    <div class="chart-wrapper">
+                        <canvas id="avalonHashrateChart"></canvas>
+                    </div>
+                </div>
+                <div class="chart-container">
+                    <h3 class="chart-title">Average Temperature</h3>
+                    <div class="chart-wrapper">
+                        <canvas id="avalonAvgTempChart"></canvas>
+                    </div>
+                </div>
+                <div class="chart-container">
+                    <h3 class="chart-title">Operating Temperature</h3>
+                    <div class="chart-wrapper">
+                        <canvas id="avalonOperatingTempChart"></canvas>
+                    </div>
+                </div>
+            `;
+            document.getElementById('avalon-charts-container').innerHTML = chartsHtml;
+            
+            setTimeout(() => {
+                avalonHashrateChart = createChart('avalonHashrateChart', 'Hashrate (TH/s)', '#3b82f6', true);
+                avalonAvgTempChart = createChart('avalonAvgTempChart', 'Average Temperature', '#ef4444', false, true);
+                avalonOperatingTempChart = createChart('avalonOperatingTempChart', 'Operating Temperature', '#f59e0b', false, true);
+            }, 100);
+        }
+        
+        async function fetchAvalonStats() {
+            // Clear any existing timeout to prevent multiple simultaneous fetches
+            if (avalonFetchTimeoutId) {
+                clearTimeout(avalonFetchTimeoutId);
+                avalonFetchTimeoutId = null;
+            }
+            
+            try {
+                const response = await fetch('/api/avalon/stats');
+                if (!response.ok) {
+                    throw new Error(`HTTP error! status: ${response.status}`);
+                }
+                const data = await response.json();
+                if (data && !data.error) {
+                    updateAvalonDisplay(data);
+                } else {
+                    console.error('Avalon Nano API returned error:', data);
+                    document.getElementById('avalon-metrics-container').innerHTML = 
+                        '<div class="loading">Error fetching Avalon Nano data. Check that the device is accessible and IP is correct.</div>';
+                    // Schedule next fetch even on error
+                    avalonFetchTimeoutId = setTimeout(fetchAvalonStats, refreshInterval);
+                }
+            } catch (error) {
+                console.error('Error fetching Avalon Nano stats:', error);
+                document.getElementById('avalon-metrics-container').innerHTML = 
+                    '<div class="loading">Error: ' + error.message + '<br><small>Check that the C# server is running and Avalon Nano is accessible</small></div>';
+                // Schedule next fetch even on error (uses same 5 second interval as BitAxe)
+                avalonFetchTimeoutId = setTimeout(fetchAvalonStats, refreshInterval);
+            }
+        }
+        
+        function updateAvalonDisplay(data) {
+            if (!data) return;
+            
+            // Use lowercase property names to match JSON (System.Text.Json with JsonPropertyName)
+            const realtimeHash = parseFloat(data.realtime_hash || data.realtimeHash || 0);
+            const averageHash = parseFloat(data.average_hash || data.averageHash || 0);
+            const power = parseFloat(data.power || 0);
+            const fanStatus = parseInt(data.fan_status || data.fanStatus || 0);
+            const fanR = parseInt(data.fanr || data.fanR || 0);
+            const accepted = parseInt(data.accepted || 0);
+            const reject = parseInt(data.reject || 0);
+            const rejectedPercentage = parseFloat(data.rejected_percentage || data.rejectedPercentage || 0);
+            const ping = parseInt(data.ping || 0);
+            const elapsed = parseInt(data.elapsed || 0);
+            const workingMode = (data.workingmode || data.workingMode) === "2" ? "High" : (data.workingmode || data.workingMode) === "1" ? "Low" : "Unknown";
+            const workingStatus = (data.workingstatus || data.workingStatus) === "1" ? "Fine" : "Unknown";
+            const asicStatus = (data.asic_status || data.asicStatus) === "0" ? "Fine" : "Error";
+            const powerStatus = (data.power_status || data.powerStatus) === "0" ? "Fine" : "Error";
+            const poolStatus = (data.pool_status || data.poolStatus) === "1" ? "Connected" : "Disconnected";
+            
+            // Format elapsed time
+            const hours = Math.floor(elapsed / 3600);
+            const minutes = Math.floor((elapsed % 3600) / 60);
+            const seconds = elapsed % 60;
+            const elapsedStr = `${hours}H ${minutes}M ${seconds}S`;
+            
+            // Get temperature data
+            const otemp = parseInt(data.otemp || data.oTemp || 0);
+            const tavg = parseInt(data.tavg || data.tAvg || 0);
+            
+            // Calculate average temperatures from chart data (same way BitAxe does it)
+            let avgTempDisplay = tavg;
+            if (avalonChartData.avgTemp.values.length > 0) {
+                const runningAvg = calculateRunningAverage(avalonChartData.avgTemp.values);
+                avgTempDisplay = runningAvg[runningAvg.length - 1];
+            }
+            
+            let avgOperatingTempDisplay = otemp;
+            if (avalonChartData.operatingTemp.values.length > 0) {
+                const runningAvg = calculateRunningAverage(avalonChartData.operatingTemp.values);
+                avgOperatingTempDisplay = runningAvg[runningAvg.length - 1];
+            }
+            
+            // Calculate average hashrate from chart data
+            let avgHashDisplay = averageHash;
+            if (avalonChartData.hashrate.values.length > 0) {
+                const sum = avalonChartData.hashrate.values.reduce((a, b) => a + b, 0);
+                avgHashDisplay = sum / avalonChartData.hashrate.values.length;
+            }
+            
+            // Update metrics cards (matching BitAxe style exactly)
+            const metricsHtml = `
+                <div class="metric-card primary">
+                    <div class="metric-value-wrapper">
+                        <div class="metric-value-section">
+                            <div class="metric-label">Hashrate</div>
+                            <div class="metric-value">
+                                ${realtimeHash.toFixed(2)}
+                                <span class="metric-unit">TH/s</span>
+                            </div>
+                        </div>
+                        <div class="metric-average-section">
+                            <div class="metric-average-label">Average</div>
+                            <div class="metric-average">
+                                ${avgHashDisplay.toFixed(2)}
+                                <span class="metric-unit">TH/s</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="metric-card success">
+                    <div class="metric-value-wrapper">
+                        <div class="metric-value-section">
+                            <div class="metric-label">Average Temperature</div>
+                            <div class="metric-value">
+                                ${tavg.toFixed(1)}
+                                <span class="metric-unit">°C</span>
+                            </div>
+                        </div>
+                        <div class="metric-average-section">
+                            <div class="metric-average-label">Average</div>
+                            <div class="metric-average">
+                                ${avgTempDisplay.toFixed(1)}
+                                <span class="metric-unit">°C</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="metric-card operating-temperature success">
+                    <div class="metric-value-wrapper">
+                        <div class="metric-value-section">
+                            <div class="metric-label">Operating Temperature</div>
+                            <div class="metric-value">
+                                ${otemp.toFixed(1)}
+                                <span class="metric-unit">°C</span>
+                            </div>
+                        </div>
+                        <div class="metric-average-section">
+                            <div class="metric-average-label">Average</div>
+                            <div class="metric-average">
+                                ${avgOperatingTempDisplay.toFixed(1)}
+                                <span class="metric-unit">°C</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="metric-card info">
+                    <div class="metric-label">Power Consumption</div>
+                    <div class="metric-value">${power.toFixed(1)}</div>
+                    <div class="metric-subvalue">W</div>
+                </div>
+                <div class="metric-card info">
+                    <div class="metric-label">Found Blocks</div>
+                    <div class="metric-value">${(data.found_blocks || data.foundBlocks || data.FoundBlocks || 0).toLocaleString()}</div>
+                    <div class="metric-subvalue">Blocks</div>
+                </div>
+            `;
+            document.getElementById('avalon-metrics-container').innerHTML = metricsHtml;
+            
+            // Info cards section
+            const bestShare = parseFloat(data.best_share || data.bestShare || 0);
+            const infoHtml = `
+                <div class="info-card">
+                    <div class="info-label">Best Difficulty</div>
+                    <div class="info-value">${formatDifficulty(bestShare)}</div>
+                </div>
+                <div class="info-card">
+                    <div class="info-label">Accepted Shares</div>
+                    <div class="info-value">${accepted.toLocaleString()}</div>
+                </div>
+                <div class="info-card">
+                    <div class="info-label">Rejected Shares</div>
+                    <div class="info-value ${reject > 0 ? 'bad' : 'good'}">${reject.toLocaleString()}</div>
+                </div>
+                <div class="info-card">
+                    <div class="info-label">Rejection Percentage</div>
+                    <div class="info-value ${rejectedPercentage > 5 ? 'bad' : rejectedPercentage > 2 ? 'warning' : 'good'}">${rejectedPercentage.toFixed(2)}%</div>
+                </div>
+                <div class="info-card">
+                    <div class="info-label">Working Status</div>
+                    <div class="info-value ${workingStatus === 'Fine' ? 'good' : 'bad'}">${workingStatus}</div>
+                </div>
+                <div class="info-card">
+                    <div class="info-label">Pool URL</div>
+                    <div class="info-value" style="font-size: 14px;">${data.address || data.poolUrl || data.pool_url || 'N/A'}</div>
+                </div>
+                <div class="info-card">
+                    <div class="info-label">Pool Status</div>
+                    <div class="info-value ${poolStatus === 'Connected' ? 'good' : 'bad'}">${poolStatus}</div>
+                </div>
+                <div class="info-card">
+                    <div class="info-label">Elapsed Time</div>
+                    <div class="info-value">${elapsedStr}</div>
+                </div>
+            `;
+            document.getElementById('avalon-info-container').innerHTML = infoHtml;
+            
+            // Update charts
+            const now = new Date();
+            const timeLabel = now.toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit', second: '2-digit' });
+            
+            // Update hashrate chart (with both realtime and average)
+            avalonChartData.hashrate.labels.push(timeLabel);
+            avalonChartData.hashrate.values.push(realtimeHash);
+            avalonChartData.hashrate.avgValues.push(averageHash);
+            
+            // Update temperature charts
+            avalonChartData.avgTemp.labels.push(timeLabel);
+            avalonChartData.avgTemp.values.push(tavg);
+            
+            avalonChartData.operatingTemp.labels.push(timeLabel);
+            avalonChartData.operatingTemp.values.push(otemp);
+            
+            // No limit - collect all data points from the current session
+            // All data points will remain loaded on the charts
+            
+            if (avalonHashrateChart) {
+                // Update hashrate chart with realtime values
+                updateChart(avalonHashrateChart, avalonChartData.hashrate.labels, avalonChartData.hashrate.values, '#3b82f6');
+                // Update average line separately
+                if (avalonChartData.hashrate.avgValues.length > 0) {
+                    const avgValues = calculateRunningAverage(avalonChartData.hashrate.values);
+                    avalonHashrateChart.data.datasets[1].data = avgValues;
+                    avalonHashrateChart.update('none');
+                }
+            }
+            if (avalonAvgTempChart) {
+                updateChart(avalonAvgTempChart, avalonChartData.avgTemp.labels, avalonChartData.avgTemp.values, '#ef4444');
+            }
+            if (avalonOperatingTempChart) {
+                updateChart(avalonOperatingTempChart, avalonChartData.operatingTemp.labels, avalonChartData.operatingTemp.values, '#f59e0b');
+            }
+            
+            // Store last known Avalon data for swarm display
+            lastKnownAvalonData = data;
+            
+            // Update swarm display if swarm tab is active
+            updateSwarmAvalonDisplay(data);
+            
+            // Schedule next fetch - use same interval as BitAxe (5 seconds)
+            // Clear any existing timeout first to prevent double scheduling
+            if (avalonFetchTimeoutId) {
+                clearTimeout(avalonFetchTimeoutId);
+            }
+            avalonFetchTimeoutId = setTimeout(fetchAvalonStats, refreshInterval);
+        }
+        
+        // Swarm tab functions
+        function initializeSwarmCharts() {
+            // Initialize BitAxe charts for swarm tab
+            const bitaxeChartsHtml = `
+                <div class="chart-container">
+                    <h3 class="chart-title">Current Hashrate</h3>
+                    <div class="chart-wrapper">
+                        <canvas id="swarmBitaxeHashrateChart"></canvas>
+                    </div>
+                </div>
+                <div class="chart-container">
+                    <h3 class="chart-title">Temperature</h3>
+                    <div class="chart-wrapper">
+                        <canvas id="swarmBitaxeTemperatureChart"></canvas>
+                    </div>
+                </div>
+                <div class="chart-container">
+                    <h3 class="chart-title">VR Temperature</h3>
+                    <div class="chart-wrapper">
+                        <canvas id="swarmBitaxeVrTemperatureChart"></canvas>
+                    </div>
+                </div>
+            `;
+            document.getElementById('swarm-bitaxe-charts-container').innerHTML = bitaxeChartsHtml;
+            
+            // Initialize Avalon Nano charts for swarm tab
+            const avalonChartsHtml = `
+                <div class="chart-container">
+                    <h3 class="chart-title">Hashrate (TH/s)</h3>
+                    <div class="chart-wrapper">
+                        <canvas id="swarmAvalonHashrateChart"></canvas>
+                    </div>
+                </div>
+                <div class="chart-container">
+                    <h3 class="chart-title">Average Temperature</h3>
+                    <div class="chart-wrapper">
+                        <canvas id="swarmAvalonAvgTempChart"></canvas>
+                    </div>
+                </div>
+                <div class="chart-container">
+                    <h3 class="chart-title">Operating Temperature</h3>
+                    <div class="chart-wrapper">
+                        <canvas id="swarmAvalonOperatingTempChart"></canvas>
+                    </div>
+                </div>
+            `;
+            document.getElementById('swarm-avalon-charts-container').innerHTML = avalonChartsHtml;
+            
+            // Create chart instances after DOM is ready
+            setTimeout(() => {
+                swarmBitaxeHashrateChart = createChart('swarmBitaxeHashrateChart', 'Current Hashrate', '#3b82f6', true);
+                swarmBitaxeTemperatureChart = createChart('swarmBitaxeTemperatureChart', 'Temperature', '#ef4444', false, true);
+                swarmBitaxeVrTemperatureChart = createChart('swarmBitaxeVrTemperatureChart', 'VR Temperature', '#f59e0b', false, true);
+                
+                swarmAvalonHashrateChart = createChart('swarmAvalonHashrateChart', 'Hashrate (TH/s)', '#3b82f6', true);
+                swarmAvalonAvgTempChart = createChart('swarmAvalonAvgTempChart', 'Average Temperature', '#ef4444', false, true);
+                swarmAvalonOperatingTempChart = createChart('swarmAvalonOperatingTempChart', 'Operating Temperature', '#f59e0b', false, true);
+            }, 100);
+        }
+        
+        function updateSwarmBitaxeDisplay(data) {
+            if (!data) return;
+            
+            // Parse values (same as updateDisplay)
+            const temp = (data.temp !== null && data.temp !== undefined && !isNaN(data.temp)) ? data.temp : 0;
+            const vrTemp = (data.vrTemp !== null && data.vrTemp !== undefined && !isNaN(data.vrTemp)) ? data.vrTemp : 0;
+            const hashRate = (data.hashRate !== null && data.hashRate !== undefined && !isNaN(data.hashRate)) ? data.hashRate : 0;
+            const hashRateAvg = (data.hashRateAvg !== null && data.hashRateAvg !== undefined && !isNaN(data.hashRateAvg)) ? data.hashRateAvg : 0;
+            const power = (data.power !== null && data.power !== undefined && !isNaN(data.power)) ? data.power : 0;
+            const maxPower = (data.maxPower !== null && data.maxPower !== undefined && !isNaN(data.maxPower)) ? data.maxPower : 0;
+            const blockFound = (data.blockFound !== null && data.blockFound !== undefined) ? data.blockFound : 0;
+            const bestDiff = (data.bestDiff !== null && data.bestDiff !== undefined && !isNaN(data.bestDiff)) ? data.bestDiff : 0;
+            
+            const currentHashrateFormatted = formatHashrate(hashRate);
+            
+            // Calculate average hashrate from historical data
+            let trueAvgHashrate = 0;
+            if (chartData.hashrate.values.length > 0) {
+                const sum = chartData.hashrate.values.reduce((a, b) => a + b, 0);
+                const trueAvgHashrateInTh = sum / chartData.hashrate.values.length;
+                // Chart data is in TH/s, convert to GH/s for formatHashrate function
+                trueAvgHashrate = trueAvgHashrateInTh * 1000;
+            } else if (hashRateAvg > 0) {
+                // hashRateAvg might be in GH/s from API, so use it directly
+                trueAvgHashrate = hashRateAvg;
+            }
+            
+            const hashrateFormatted = formatHashrate(trueAvgHashrate);
+            
+            // Calculate average temperatures
+            let avgTemp = temp;
+            if (chartData.temperature.values.length > 0) {
+                const runningAvg = calculateRunningAverage(chartData.temperature.values);
+                avgTemp = runningAvg[runningAvg.length - 1];
+            }
+            
+            let avgVrTemp = vrTemp;
+            if (chartData.vrTemperature.values.length > 0) {
+                const runningAvg = calculateRunningAverage(chartData.vrTemperature.values);
+                avgVrTemp = runningAvg[runningAvg.length - 1];
+            }
+            
+            // Update metrics cards (same structure as BitAxe All Data tab)
+            const metricsHtml = `
+                <div class="metric-card primary">
+                    <div class="metric-value-wrapper">
+                        <div class="metric-value-section">
+                            <div class="metric-label">Hashrate</div>
+                            <div class="metric-value">
+                                ${currentHashrateFormatted.value}
+                                <span class="metric-unit">${currentHashrateFormatted.unit}</span>
+                            </div>
+                        </div>
+                        <div class="metric-average-section">
+                            <div class="metric-average-label">Average</div>
+                            <div class="metric-average">
+                                ${hashrateFormatted.value}
+                                <span class="metric-unit">${hashrateFormatted.unit}</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="metric-card ${temp >= 75 ? 'danger' : temp >= 70 ? 'warning' : 'success'}">
+                    <div class="metric-value-wrapper">
+                        <div class="metric-value-section">
+                            <div class="metric-label">Temperature</div>
+                            <div class="metric-value">
+                                ${temp.toFixed(1)}
+                                <span class="metric-unit">°C</span>
+                            </div>
+                        </div>
+                        <div class="metric-average-section">
+                            <div class="metric-average-label">Average</div>
+                            <div class="metric-average">
+                                ${avgTemp.toFixed(1)}
+                                <span class="metric-unit">°C</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="metric-card vr-temperature ${vrTemp >= 95 ? 'danger' : vrTemp >= 90 ? 'warning' : 'success'}">
+                    <div class="metric-value-wrapper">
+                        <div class="metric-value-section">
+                            <div class="metric-label">VR Temperature</div>
+                            <div class="metric-value">
+                                ${vrTemp.toFixed(1)}
+                                <span class="metric-unit">°C</span>
+                            </div>
+                        </div>
+                        <div class="metric-average-section">
+                            <div class="metric-average-label">Average</div>
+                            <div class="metric-average">
+                                ${avgVrTemp.toFixed(1)}
+                                <span class="metric-unit">°C</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="metric-card info">
+                    <div class="metric-value-wrapper">
+                        <div class="metric-value-section">
+                            <div class="metric-label">Power Consumption</div>
+                            <div class="metric-value">
+                                ${power.toFixed(1)}
+                                <span class="metric-unit">W</span>
+                            </div>
+                        </div>
+                        <div class="metric-average-section">
+                            <div class="metric-average-label">Max</div>
+                            <div class="metric-average">
+                                ${maxPower.toFixed(0)}
+                                <span class="metric-unit">W</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="metric-card blocks-found">
+                    <div class="metric-label">Best Difficulty</div>
+                    <div class="metric-value-wrapper">
+                        <div class="metric-value">
+                            ${formatDifficulty(bestDiff)}
+                        </div>
+                    </div>
+                </div>
+            `;
+            document.getElementById('swarm-bitaxe-metrics-container').innerHTML = metricsHtml;
+            
+            // Update charts
+            if (swarmBitaxeHashrateChart) {
+                updateChart(swarmBitaxeHashrateChart, chartData.hashrate.labels, chartData.hashrate.values, '#3b82f6');
+            }
+            if (swarmBitaxeTemperatureChart) {
+                updateChart(swarmBitaxeTemperatureChart, chartData.temperature.labels, chartData.temperature.values, '#ef4444');
+            }
+            if (swarmBitaxeVrTemperatureChart) {
+                updateChart(swarmBitaxeVrTemperatureChart, chartData.vrTemperature.labels, chartData.vrTemperature.values, '#f59e0b');
+            }
+        }
+        
+        function updateSwarmAvalonDisplay(data) {
+            if (!data) return;
+            
+            // Parse values (same as updateAvalonDisplay)
+            const realtimeHash = parseFloat(data.realtime_hash || data.realtimeHash || 0);
+            const averageHash = parseFloat(data.average_hash || data.averageHash || 0);
+            const power = parseFloat(data.power || 0);
+            const tavg = parseInt(data.tavg || data.tAvg || 0);
+            const otemp = parseInt(data.otemp || data.OTemp || 0);
+            const blocksFound = parseInt(data.found_blocks || data.foundBlocks || 0);
+            const bestShare = parseFloat(data.best_share || data.bestShare || 0);
+            
+            // Calculate averages from chart data (hashrate is already in TH/s)
+            let avgHashFromChart = averageHash;
+            if (avalonChartData.hashrate.values.length > 0) {
+                const sum = avalonChartData.hashrate.values.reduce((a, b) => a + b, 0);
+                avgHashFromChart = sum / avalonChartData.hashrate.values.length;
+            }
+            // Hashrate is already in TH/s, use directly like the Avalon tab does
+            const realtimeHashValue = realtimeHash.toFixed(2);
+            const avgHashValue = avgHashFromChart.toFixed(2);
+            
+            let avgTempFromChart = tavg;
+            if (avalonChartData.avgTemp.values.length > 0) {
+                const runningAvg = calculateRunningAverage(avalonChartData.avgTemp.values);
+                avgTempFromChart = runningAvg[runningAvg.length - 1];
+            }
+            
+            let avgOperatingTempFromChart = otemp;
+            if (avalonChartData.operatingTemp.values.length > 0) {
+                const runningAvg = calculateRunningAverage(avalonChartData.operatingTemp.values);
+                avgOperatingTempFromChart = runningAvg[runningAvg.length - 1];
+            }
+            
+            // Update metrics cards (same structure as Avalon Nano 3S tab)
+            const metricsHtml = `
+                <div class="metric-card primary">
+                    <div class="metric-value-wrapper">
+                        <div class="metric-value-section">
+                            <div class="metric-label">Hashrate</div>
+                            <div class="metric-value">
+                                ${realtimeHashValue}
+                                <span class="metric-unit">TH/s</span>
+                            </div>
+                        </div>
+                        <div class="metric-average-section">
+                            <div class="metric-average-label">Average</div>
+                            <div class="metric-average">
+                                ${avgHashValue}
+                                <span class="metric-unit">TH/s</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="metric-card success">
+                    <div class="metric-value-wrapper">
+                        <div class="metric-value-section">
+                            <div class="metric-label">Average Temperature</div>
+                            <div class="metric-value">
+                                ${tavg.toFixed(1)}
+                                <span class="metric-unit">°C</span>
+                            </div>
+                        </div>
+                        <div class="metric-average-section">
+                            <div class="metric-average-label">Average</div>
+                            <div class="metric-average">
+                                ${avgTempFromChart.toFixed(1)}
+                                <span class="metric-unit">°C</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="metric-card operating-temperature success">
+                    <div class="metric-value-wrapper">
+                        <div class="metric-value-section">
+                            <div class="metric-label">Operating Temperature</div>
+                            <div class="metric-value">
+                                ${otemp.toFixed(1)}
+                                <span class="metric-unit">°C</span>
+                            </div>
+                        </div>
+                        <div class="metric-average-section">
+                            <div class="metric-average-label">Average</div>
+                            <div class="metric-average">
+                                ${avgOperatingTempFromChart.toFixed(1)}
+                                <span class="metric-unit">°C</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="metric-card info">
+                    <div class="metric-value-wrapper">
+                        <div class="metric-value-section">
+                            <div class="metric-label">Power Consumption</div>
+                            <div class="metric-value">
+                                ${power.toFixed(1)}
+                                <span class="metric-unit">W</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="metric-card blocks-found">
+                    <div class="metric-label">Best Difficulty</div>
+                    <div class="metric-value-wrapper">
+                        <div class="metric-value">
+                            ${formatDifficulty(bestShare)}
+                        </div>
+                    </div>
+                </div>
+            `;
+            document.getElementById('swarm-avalon-metrics-container').innerHTML = metricsHtml;
+            
+            // Update charts
+            if (swarmAvalonHashrateChart) {
+                updateChart(swarmAvalonHashrateChart, avalonChartData.hashrate.labels, avalonChartData.hashrate.values, '#3b82f6');
+            }
+            if (swarmAvalonAvgTempChart) {
+                updateChart(swarmAvalonAvgTempChart, avalonChartData.avgTemp.labels, avalonChartData.avgTemp.values, '#ef4444');
+            }
+            if (swarmAvalonOperatingTempChart) {
+                updateChart(swarmAvalonOperatingTempChart, avalonChartData.operatingTemp.labels, avalonChartData.operatingTemp.values, '#f59e0b');
+            }
+        }
     </script>
 </body>
 </html>
